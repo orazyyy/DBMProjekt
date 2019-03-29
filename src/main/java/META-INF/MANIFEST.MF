@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Class-Path: javafx-graphics-11.0.2-linux.jar javafx-base-11.0.2.jar ja
+ vafx-fxml-11.0.2-win.jar junit-platform-commons-1.0.2.jar junit-jupit
+ er-api-5.0.2.jar javafx-controls-11.0.2-win.jar opentest4j-1.0.0.jar 
+ javafx-controls-11.0.2-linux.jar javafx-swing-11.0.2-win.jar javafx-g
+ raphics-11.0.2.jar javafx-swing-11.0.2-linux.jar sqlite-jdbc-3.16.1.j
+ ar javafx-graphics-11.0.2-win.jar javafx-base-11.0.2-linux.jar javafx
+ -base-11.0.2-win.jar ApplicationKit-v1.3.6.jar javafx-controls-11.0.2
+ .jar javafx-fxml-11.0.2-linux.jar
+

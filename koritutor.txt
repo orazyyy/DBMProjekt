@@ -1,0 +1,94 @@
+Punkte 1 von 1
+Schwere Fehler:
+
+
+Mittlere Fehler:
+
+
+Leichte Fehler:
+* Attribut NOT GLOB '*  *' f?ngt keine leeren Strings ab.
+  Besser: Attribut != '' oder length(Attribut)>0
+* Es fehlt ein Trigger:
+  AFTER INSERT ON Ticket BEGIN INSERT INTO T_hat_Be VALUES (new.TicketID,'Grundpreis');
+* Nicht alle Schlüsselkandidaten sind mit UNIQUE gekennzeichnet.
+  Es fehlen:
+  - UNIQUE(Uhrzeit, Datum, Saalname) in Vorstellung
+    Es kann immer nur eine Vorstellung zum gleichen Zeitpunkt im gleichen Saal starten.
+  - UNIQUE(TVorstellungID, Reihe, Nummer) in Ticket
+    Ein Platz in einer Vorstellung kann nur einmal reserviert werden.
+
+Anmerkungen:
+- Für den Bonus zu Administrator fehlen noch Trigger:
+  - BEFORE UPDATE ON Administrator
+  - BEFORE UPDATE ON Mitarbeiter
+  die dafür sorgen, dass der Administrator im Bereich IT arbeitet.
+
+
+
+
+
+预计使用的table
+Jeder Anwender des Programms soll…
+
+sich unter Angabe von Vorname, Nachname, Geburtsdatum, E-Mail-Adresse und Passwort als Benutzer registrieren k?nnen. Danach soll er sich jederzeit mit E-Mail-Adresse und Passwort gegenüber dem Programm authentifizieren k?nnen und von diesem authorisiert werden k?nnen.
+注册和登陆
+
+sich alle Filme auflisten lassen k?nnen. Filteroptionen sind Titel (Infix), mehrere Genrebezeichnungen, Ver?ffentlichungsjahr und mehrere Schauspieler (Infix in Vor-, Nachname oder Künstlername).
+查询film
+
+sich Filme einzeln anzeigen lassen k?nnen.
+film表
+
+sich alle Genres zu einem Film auflisten lassen k?nnen.
+查询一个film的所有genre，直接使用fgehoertzug表
+
+sich alle Schauspieler zu einem Film auflisten lassen k?nnen.
+查询一个film的所有演员，直接使用schspieltf表
+
+sich die Anzahl der Bewertungen und die Durchschnitssbewertung zu einem Film anzeigen lassen k?nnen.
+在film表的点击中查看，使用count和avg函数
+
+sich alle Vorstellungen zu einem Film auflisten lassen k?nnen. Filteroptionen sind mehrere Wochentage (0 für Sonntag, 1 für Montag, …, 6 für Samstag), Sprache und 3D-Status.
+sich Vorstellungen einzeln anzeigen lassen k?nnen.
+使用Vorstellung表
+
+Jeder authentifizierte und als Benutzer authorisierte Anwender des Programms soll…
+
+nur seine Informationen einsehen und ?ndern k?nnen.
+myaccount表（）
+nur sich l?schen k?nnen, falls er kein Mitarbeiter ist.
+Bewertungen zu Filmen hinzufügen und nur seine eigenen in Bezug auf die vergebenen Sterne ?ndern und l?schen k?nnen.
+mybewertung表（）
+Tickets zu einer Vorstellung reservieren und nur seine eigenen einzeln einschlie?lich des Gesamtpreises einsehen und l?schen k?nnen.
+mytickt表（）
+
+
+Jeder authentifizierte und als Mitarbeiter authorisierte Anwender des Programms soll…
+
+sich Benutzer einzeln anzeigen lassen und ihre Informationen bis auf E-Mail-Adresse und Passwort ?ndern k?nnen.
+andere Benutzer l?schen k?nnen.
+allaccount表
+
+sich Tickets einzeln anzeigen lassen und diese auch l?schen k?nnen.
+allticket表
+
+Bewertungen zu Filmen l?schen k?nnen.
+BbewertetF表
+sich alle Benutzer anzeigen lassen k?nnen. Filteroptionen sind E-Mail-Adresse (Infix) und Alter (als untere Schranke).
+allbenutzer表
+Filme hinzufügen, bearbeiten und l?schen k?nnen.
+
+Genres zu einem Film hinzufügen und l?schen k?nnen.
+Schauspieler zu einem Film hinzufügen und l?schen k?nnen.
+Vorstellungen zu einem Film hinzufügen, bearbeiten und l?schen k?nnen.
+sich alle Tickets zu einer Vorstellung anzeigen lassen k?nnen.
+
+
+
+
+
+
+
+
+
+

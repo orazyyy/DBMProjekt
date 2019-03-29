@@ -1,0 +1,27 @@
+plugins{
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+
+group 'de.hhu.cs.dbs.propra'
+version '1.0.0'
+description = 'Project for all semesters'
+sourceCompatibility = 11
+targetCompatibility = 11
+mainClassName = group + '.Application'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'org.xerial:sqlite-jdbc:3.16.1+'
+    implementation 'com.github.Phlegethon90:ApplicationKit:v1.3.6'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.0.2'
+}
+
+javafx {
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.swing']
+}
